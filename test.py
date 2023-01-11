@@ -32,7 +32,7 @@ for data in cur.execute("SHOW TABLES;"):
 
 # 関数
 def val():
-    cur.execute("SELECT name FROM persons WHERE id = '" + txt1.get() + "'");
+    cur.execute("SELECT name FROM persons WHERE id = '" + txt1.get() + "'");#入力された番号からid検索してnameを持ってくる
     label_ans = tk.Label(root, text = cur.fetchall(), fg='black', bg='papaya whip')
     label_ans.place(x=10, y=150)
 
