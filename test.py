@@ -27,12 +27,12 @@ root.resizable(width=False, height=False)#ウィンドウサイズを変更不�
 #conn.commit()
 #----------------------------------------------------------------------------
 
-for data in cur.execute("SHOW TABLES;"):
+for data in cur.execute("SELECT * FROM persons"):
     print(data)
 
 # 関数
 def val():
-    cur.execute("SELECT name FROM persons WHERE id = '" + txt1.get() + "'");#入力された番号からid検索してnameを持ってくる
+    cur.execute("SELECT name FROM persons WHERE id = '" + txt1.get() + "';");#入力された番号からid検索してnameを持ってくる
     label_ans = tk.Label(root, text = cur.fetchall(), fg='black', bg='papaya whip')
     label_ans.place(x=10, y=150)
 
